@@ -1,0 +1,2 @@
+model_checkpoint_path: "EmoClass_KoBERT"
+all_model_checkpoint_paths: "EmoClass_KoBERT"
