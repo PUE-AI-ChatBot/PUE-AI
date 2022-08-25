@@ -23,3 +23,14 @@ assignees: ''
 
 3. Outcomes  
 이 Feature을 통해 나타내고자 하는 결과를 간단히 설명합니다.
+
+---
+
+### Parent Epic
+해당 feature를 포괄하는 상위 epic과 그 epic의 issue number를 기입하세요.
+
+Example)  
+[Epic] 마케팅 조사  
+#1
+
+---
