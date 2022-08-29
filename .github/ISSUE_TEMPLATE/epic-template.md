@@ -1,11 +1,12 @@
 ---
 name: Epic template
 about: If you want to create new epic, Describe it in this template
-title: ''
-labels: ''
+title: "[EPIC]"
+labels: epic
 assignees: ''
 
 ---
+
 ---
 ---
 ---

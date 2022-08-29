@@ -1,11 +1,12 @@
 ---
 name: Feature template
 about: Describe this issue template's purpose here.
-title: ''
-labels: ''
+title: "[Feature]"
+labels: feature
 assignees: ''
 
 ---
+
 ---
 ---
 ---
