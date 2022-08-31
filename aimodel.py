@@ -70,10 +70,10 @@ class AIModel:
         print(len(self.dialog_buffer))
 
         if self.manage_dailogbuffer() is True:
-            (initial_topic_output, topic_percentage), topic_prob_vec = Topic_predict(self.Topic_model, [dialogs], self._mTokenizer)
+            (initial_topic_output, initial_label_prob, topic_percentage), topic_prob_vec = Topic_predict(self.Topic_model, [dialogs], self._mTokenizer)
             print(topic_percentage)
-            if EmoOut == '불만' or EmoOut == '당혹' or EmoOut == '걱정' or EmoOut == '질투' or EmoOut == '슬픔' \
-                or EmoOut == '죄책감' or EmoOut == '연민':
+            if (EmoOut == '불만' or EmoOut == '당혹' or EmoOut == '걱정' or EmoOut == '질투' or EmoOut == '슬픔' \
+                or EmoOut == '죄책감' or EmoOut == '연민') and (float(initial_label_prob*100) < 99.0):
                 topic_index = np.argmax(topic_prob_vec[:7])
                 altered_topic_output = self._topic_converter[topic_index]
                 Topic = altered_topic_output

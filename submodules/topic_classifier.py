@@ -48,7 +48,7 @@ def Topic_predict(model, input, tokenizer, converter=Topics_mapping_by_index, ma
 
     result = []
     for prob_vector, label_index in zip(y_predicted, label_predicted):
-        result = (converter[label_index], [round(value*100, 1) for value in np.array(prob_vector)][1:])
+        result = (converter[label_index], prob_vector[label_index], [round(value*100, 1) for value in np.array(prob_vector)][1:])
 
     return result, y_predicted
 
