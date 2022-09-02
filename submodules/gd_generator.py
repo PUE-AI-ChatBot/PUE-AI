@@ -19,7 +19,7 @@ def load_general_corpus_model():
     VOCAB_SIZE = 32000
 
     # print(VOCAB_SIZE)
-    print("########Loading GC model!!!########")
+    print("########Loading GD model!!!########")
 
     # new_model = GeneralCorpusBertModel("klue/bert-base", num_layers=NUM_LAYERS, d_model=D_MODEL, 
     #                                     dff=DFF, num_heads=NUM_HEADS, num_labels=VOCAB_SIZE)
@@ -29,7 +29,7 @@ def load_general_corpus_model():
     new_model = GeneralDialogBertModel("klue/bert-base", num_layers=NUM_LAYERS, d_model=D_MODEL, 
                                         dff=DFF, num_heads=NUM_HEADS, num_labels=VOCAB_SIZE, dropout=DROPOUT)
 
-    new_model.load_weights(os.environ['CHATBOT_ROOT'] + "/resources/weights/Transformer_weights/General_weights.h5")
+    new_model.load_weights(os.environ['CHATBOT_ROOT'] + "/resources/weights/GeneralDialog_weights/General_weights.h5")
 
     return new_model
 
@@ -145,8 +145,8 @@ def GC_predict(sentence, model, tokenizer):
     predicted_sentence = tokenizer.decode(
         [i for i in prediction if (i < tokenizer.vocab_size) and (i != 2)])
 
-    print('Input: {}'.format(sentence))
-    print('Output: {}'.format(predicted_sentence))
+    # print('Input: {}'.format(sentence))
+    # print('Output: {}'.format(predicted_sentence))
 
     return predicted_sentence
 
