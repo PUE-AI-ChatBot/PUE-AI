@@ -83,15 +83,10 @@ class AIModel:
         else:
             Topic = "None"
 
-        if Topic == "None":
+        if EmoOut=='중립' or EmoOut=='기쁨':
             DialogType = "General"
-        else:
-            if index_mapping_by_Topics[Topic] > 6:
-                DialogType = "General"
-            elif index_mapping_by_Topics[Topic] <= 6 and (EmoOut=='중립' or EmoOut=='기쁨'):
-                DialogType = "General"
-            elif index_mapping_by_Topics[Topic] <= 6 and (EmoOut!='중립' and EmoOut!='기쁨'):
-                DialogType = "Scenario"
+        elif EmoOut=='불만' or EmoOut=='당혹' or EmoOut=='걱정' or EmoOut=='질투' or EmoOut=='슬픔' or EmoOut == '죄책감' or EmoOut == '연민':
+            DialogType = "Scenario"
 
 
         self.dialog_buffer.append(GeneralAnswer)
