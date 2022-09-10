@@ -74,7 +74,7 @@ class AIModel:
             print(topic_percentage)
             if (EmoOut == '불만' or EmoOut == '당혹' or EmoOut == '걱정' or EmoOut == '질투' or EmoOut == '슬픔' \
                 or EmoOut == '죄책감' or EmoOut == '연민') and (float(initial_label_prob*100) < 99.0):
-                topic_index = np.argmax(topic_prob_vec[:7])
+                topic_index = np.argmax(topic_prob_vec[0][:7])
                 altered_topic_output = self._topic_converter[topic_index]
                 Topic = altered_topic_output
             else:
@@ -83,9 +83,20 @@ class AIModel:
         else:
             Topic = "None"
 
+        if Topic == "None":
+            DialogType = "General"
+        else:
+            if index_mapping_by_Topics[Topic] > 6:
+                DialogType = "General"
+            elif index_mapping_by_Topics[Topic] <= 6 and (EmoOut=='중립' or EmoOut=='기쁨'):
+                DialogType = "General"
+            elif index_mapping_by_Topics[Topic] <= 6 and (EmoOut!='중립' and EmoOut!='기쁨'):
+                DialogType = "Scenario"
+
+
         self.dialog_buffer.append(GeneralAnswer)
 
-        return GeneralAnswer, NER, EmoOut, Topic
+        return GeneralAnswer, NER, EmoOut, Topic, DialogType
 
 ##광명님이 말하는 자료구조로 만들어주는 함수
     def run(self, name, inputsentence):
@@ -94,14 +105,14 @@ class AIModel:
 
         self.dialog_buffer.append(inputsentence)
 
-        GeneralAnswer, Name_Entity, Emotion, Topic = self.get_results(inputsentence)
+        GeneralAnswer, Name_Entity, Emotion, Topic, Type = self.get_results(inputsentence)
 
         Data["Name"] = name
         Data["Input_Corpus"] = inputsentence
         Data["NER"] = Name_Entity
         Data["Emotion"] = Emotion
         Data["Topic"] = Topic
-        Data["Type"] = "General"
+        Data["Type"] = Type
         Data["System_Corpus"] = GeneralAnswer
 
         return Data
