@@ -1,8 +1,6 @@
 import tensorflow as tf
 import numpy as np
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from transformers import BertTokenizer, TFBertModel
-import tensorflow as tf
 import os
 import pickle
 
