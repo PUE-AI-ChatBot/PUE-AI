@@ -1,6 +1,6 @@
 from submodules.emo_classifier import *
 from submodules.ner_classifier import *
-from submodules.gc_transformer import *
+from submodules.gd_generator import *
 # import numpy as np
 # from transformers import BertTokenizer
 # import pickle
