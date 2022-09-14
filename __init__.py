@@ -15,13 +15,12 @@ def download_weights():
 
     import gdown
     this_dir = os.environ['CHATBOT_ROOT']
-    Emo_version = NER_version = GD_version = "1.0.0"
+    Emo_version = GD_version = "1.0.0"
 
     if os.path.isfile(this_dir+"/resources/config.json"):
         with open(this_dir+"/resources/config.json",'r') as f:
             loaded = json.load(f)
             Emo_version = loaded["EMO-weights-version"]
-            NER_version = loaded["NER-weights-version"]
             GD_version = loaded["GD-weights-version"]
             SUB_version = loaded["TOPIC-weights-version"]
 
@@ -31,7 +30,6 @@ def download_weights():
     with open(this_dir + "/resources/config.json", 'r') as f:
         loaded = json.load(f)
         Emo_flag = not loaded["EMO-weights-version"] == Emo_version
-        NER_flag = not loaded["NER-weights-version"] == NER_version
         GD_flag = not loaded['GD-weights-version'] == GD_version
         SUB_flag = not loaded["TOPIC-weights-version"] == SUB_version
 
@@ -49,19 +47,6 @@ def download_weights():
         print("Downloading Emo pretrained weights...")
         output = weight_path+"/Emo_weights/Emo_weights.data-00000-of-00001"
         gdown.download(loaded["EMO-data-url"], output, quiet=False)
-
-    if not os.path.exists(weight_path + "/NER_weights"):
-        os.makedirs(weight_path + "/NER_weights")
-
-    if not os.path.isfile(weight_path+"/NER_weights/NER_weights.index") or NER_flag:
-        print("Downloading NER pretrained index...")
-        output = weight_path+"/NER_weights/NER_weights.index"
-        gdown.download(loaded["NER-index-url"], output, quiet=False)
-
-    if not os.path.isfile(weight_path+"/NER_weights/NER_weights.data-00000-of-00001") or NER_flag:
-        print("Downloading NER pretrained weights...")
-        output = weight_path+"/NER_weights/NER_weights.data-00000-of-00001"
-        gdown.download(loaded["NER-data-url"], output, quiet=False)
 
     if not os.path.exists(weight_path + "/GeneralDialog_weights"):
         os.makedirs(weight_path + "/GeneralDialog_weights")
