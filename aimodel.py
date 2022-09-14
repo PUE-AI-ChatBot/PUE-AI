@@ -1,4 +1,3 @@
-## setup
 ## device 관련 설정
 import os
 try:
