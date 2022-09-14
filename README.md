@@ -77,23 +77,31 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 #### Install library dependencies
 
 ```bash
-> npm install
+> pip install -r requirements.txt
 ```
 
-#### Start dev-server
+#### Test AI Code
 
 ```bash
-> npm run dev
+> import aimodel
+> import tensorflow as tf
+> from __init__ import setup_environ, download_weights
+> setup_environ()
+> download_weights()
+
+> with tf.device("/device:CPU:0"):
+>    DoDam = AIModel()
+>    UserName = "민채"
+>    while True:
+>        sample = input("입력 : ")
+>        output = DoDam.run(UserName, sample)
+>        print("출력 : {}" .format(output))
 ```
 
-## Bug reporting
-[Issues](https://github.com/dnd-side-project/dnd-7th-3-frontend/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-
 ## REFERENCE
-You can also see the [**back-end repository**](https://github.com/dnd-side-project/dnd-7th-3-backend).
+You can also see the [**AI_Wiki**]().
 
 ## LICENSE
-This Project is [MIT licensed](https://github.com/dnd-side-project/dnd-7th-3-frontend/blob/main/LICENSE).
 
 
 
