@@ -3,7 +3,7 @@ import numpy as np
 from gensim import corpora
 from gensim.models.ldamodel import LdaModel
 from gensim.test.utils import datapath
-from eunjeon import Mecab
+from konlpy.tag import Kkma
 
 m_index = {0:"연예및결혼_금전", 1:"연예및결혼_성격", 2:"연예및결혼_기타"}#index for married
 f_index = {0:"가족_부모", 1:"가족_형제자매", 2:"가족_소외감"}#index for famliy
@@ -22,9 +22,9 @@ def load_Sub_Topic_model():
     return model
 
 def Sub_Topic_predict(model, sentences, topic_name):
-    m = Mecab()
+    k = Kkma()
     bow = []
-    user_M = m.pos(sentences)
+    user_M = k.pos(sentences)
     for word, pos in user_M:
         if pos.startswith("N") or pos.startswith("V"):
             bow.append(word)

@@ -104,10 +104,11 @@ class AIModel:
 
         return Data
 if __name__ == "__main__" :
-    from setup import setup_environ
-    from tensorflow.python.client import device_lib
     import tensorflow as tf
+    from __init__ import setup_environ, download_weights
     setup_environ()
+    download_weights()
+
     with tf.device("/device:CPU:0"):
         DoDam = AIModel()
         UserName = "민채"
