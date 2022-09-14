@@ -31,10 +31,15 @@ assignees: ''
 ### Parent Epic
 해당 feature를 포괄하는 상위 epic과 그 epic의 issue number를 기입하세요.
 
+<<<<<<< HEAD
+Example)  
+[Epic] 마케팅 조사  
+=======
 Example)
 
 [Epic] 마케팅 조사
 
+>>>>>>> e8d0e7aa9b7ea6201b49786d06481ed0b65b2bc3
 #1
 
 ---

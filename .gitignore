@@ -1,0 +1,11 @@
+resources/weights/Emo_weights/
+
+resources/weights/GeneralDialog_weights/
+
+resources/weights/NER_weights/
+
+resources/weights/Subtopic_model/
+
+resources/weights/Topic_weights/
+
+resources/weights/Transformer_weights/
