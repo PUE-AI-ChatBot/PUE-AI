@@ -80,29 +80,21 @@ def download_weights():
         gdown.download(loaded["TOPIC-h5-url"], output, quiet=False)
 
     category = ["연애_결혼", "가족", "군대", "회사_아르바이트"]
-    theme_weights = ["LDA_model", "LDA_model.expElogbeta.npy", "LDA_model.state", "LDA_model.id2word"]
+    theme_weights = [("LDA_model_{0}","model"), ("LDA_model_{0}.expElogbeta.npy","npy"), ("LDA_model_{0}.state","state"),
+                     ("LDA_model_{0}.id2word","id2word")
+                      ]
     url_name = ["married", "family", "army", "company"]
 
     if not os.path.exists(weight_path+"/Subtopic_model"):
         os.makedirs(weight_path+"/Subtopic_model")
 
     for k, j in enumerate(url_name):
-        for i, SUB_weight in enumerate(theme_weights):
-            file_name = SUB_weight.split(".")[0]
-            if not os.path.isfile(weight_path + "/Subtopic_model/" + file_name + "_" + category[k]) or SUB_flag:
+        for file_name,file_extension in theme_weights:
+            if not os.path.isfile(weight_path + "/Subtopic_model/" + file_name.format(category[k])) or SUB_flag:
                 print("Downloading Sub topic models...")
-                file_extension = SUB_weight.split(".")
 
-                if len(file_extension) == 2:
-                    file_extension = file_extension[1]
-                    output = weight_path + "/Subtopic_model/" + file_name + "_" + category[k] + "." + file_extension
-                elif len(file_extension) == 1:
-                    file_extension = "model"
-                    output = weight_path + "/Subtopic_model/" + file_name + "_" + category[k]
-                elif len(file_extension) == 3:
-                    file_extension = file_extension[2]
-                    output = weight_path + "/Subtopic_model/" + file_name + "_" + category[k] + ".expElogbeta.npy"
+                output = weight_path + "/Subtopic_model/" + file_name.format(category[k])
 
-                gdown.download(loaded[str(j) + "-" + str(file_extension) + "-url"], output, quiet=False)
+                gdown.download(loaded[str(j) + "-" + file_extension + "-url"], output, quiet=False)
 
     print("Setup has just overed!")

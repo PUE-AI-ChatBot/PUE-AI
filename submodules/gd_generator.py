@@ -4,11 +4,12 @@ from transformers import BertTokenizer, TFBertModel
 import os
 import pickle
 
-mGC_tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/tokenizer.pickle", 'rb'))
+mGC_tokenizer = ""
 mTokenizer = BertTokenizer.from_pretrained("klue/bert-base")
 
 def load_general_corpus_model():
-
+    global mGC_tokenizer
+    mGC_tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/tokenizer.pickle", 'rb'))
     D_MODEL = 768
     NUM_LAYERS = 6
     NUM_HEADS = 24

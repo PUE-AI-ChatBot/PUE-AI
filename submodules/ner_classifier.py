@@ -7,7 +7,7 @@ import os
 from transformers import TFBertModel
 import tensorflow as tf
 
-mNER_tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/letter_to_index.pickle", 'rb'))
+mNER_tokenizer = ""
 index_mapping_by_NER = {'O': 0, 'B-LC': 1, 'I-LC': 2, 'B-QT': 3, 'I-QT': 4, 'B-OG': 5, 'I-OG': 6, 'B-DT': 7, 'I-DT': 8, 
                         'B-PS': 9, 'I-PS': 10, 'B-TI': 11, 'I-TI': 12}
 NER_mapping_by_index = {0 : '0', 1 : 'B-LC', 2 : 'I-LC', 3 : 'B-QT', 4 : 'I-QT', 5 : 'B-OG', 6 : 'I-OG', 7 : 'B-DT', 
@@ -17,6 +17,10 @@ NER_labels = dict((value, key) for (key, value) in NER_mapping_by_index.items())
 #     pass
 
 def load_NER_model():
+    global mNER_tokenizer
+
+    mNER_tokenizer = pickle.load(
+        open(os.environ['CHATBOT_ROOT'] + "/resources/converters/letter_to_index.pickle", 'rb'))
     print("########Loading NER model!!!########")
     tag_size = len(NER_labels)
     new_model = NERBertModel("klue/bert-base", labels=tag_size)

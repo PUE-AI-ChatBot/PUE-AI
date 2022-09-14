@@ -1,5 +1,4 @@
 ## setup
-from setup import setup_environ
 ## device 관련 설정
 import os
 
@@ -9,8 +8,6 @@ from submodules.gd_generator import *
 from submodules.topic_classifier import *
 from submodules.subtopic_classifier import *
 from collections import OrderedDict
-
-
 
 ## 가중치만 만들고 불러오는게 안전하다
 ##모델 만들어오는 함수들
@@ -28,6 +25,7 @@ class AIModel:
         self._topic_converter = Topics_mapping_by_index
 
     def model_loader(self):
+        print("Hello")
         self.GC_model = load_general_corpus_model()
         self.NER_model = load_NER_model()
         self.EMO_model = load_Emo_model()
@@ -107,13 +105,15 @@ class AIModel:
         Data["System_Corpus"] = GeneralAnswer
 
         return Data
+if __name__ == "__main__" :
+    from setup import setup_environ
+    setup_environ()
 
-# if __name__ == "__main__ ":
+    os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-DoDam = AIModel()
-UserName = "민채",
-
-while True:
-    sample = input("입력 : ")
-    output = DoDam.run(UserName, sample)
-    print("출력 : {}" .format(output))
+    DoDam = AIModel()
+    UserName = "민채"
+    while True:
+        sample = input("입력 : ")
+        output = DoDam.run(UserName, sample)
+        print("출력 : {}" .format(output))
