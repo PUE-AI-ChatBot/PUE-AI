@@ -28,6 +28,55 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 </div>
 
 
+## File structure
+<div align="left">
+    ```
+    
+    PUE-AI
+    │
+    ├─examples
+    │  │  aimodel.py
+    │  │  AIServer.py
+    │  │  main.py
+    │  │  test_Chatbot.py
+    │  │  test_NER.py
+    │  │
+    │  └─trainning
+    │          Training_Chatbot_Transformer.py
+    │          Training_EmoClass_KoBERT.py
+    │          Training_NER_KoBERT.py
+    │
+    ├─resources
+    │  │  config.json
+    │  │
+    │  ├─converters
+    │  │      letter_to_index.pickle
+    │  │      NER_label_to_index.pickle
+    │  │      tokenizer.pickle
+    │  │
+    │  ├─training_data
+    │  │      delete_before_use.txt
+    │  │
+    │  └─weights
+    │      │  delete_before_use.txt
+    │      │
+    │      ├─Topic_weights
+    │      │      delete_before_use.txt
+    │      │
+    │      └─Transformer_weights
+    │              delete_before_use.txt
+    │
+    └─submodules
+       │  emo_classifier.py
+       │  gd_generator.py
+       │  subtopic_classifier.py
+       │  topic_classifier.py
+       └─  __init__.py
+    
+    ```
+</div>
+
+
 ## Environments
 <table>
 <tr>
@@ -99,7 +148,7 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 ```
 
 ## REFERENCE
-You can also see the [**AI_Wiki**]().
+You can also see the [**AI_Wiki**](https://github.com/PUE-AI-ChatBot/PUE-AI.wiki.git).
 
 ## LICENSE
 
