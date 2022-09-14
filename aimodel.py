@@ -25,7 +25,6 @@ class AIModel:
 
     def model_loader(self):
         self.GC_model = load_general_corpus_model()
-        self.NER_model = load_NER_model()
         self.EMO_model = load_Emo_model()
         self.Topic_model = load_Topic_model()
         self.ST_model = load_Sub_Topic_model()
@@ -53,12 +52,7 @@ class AIModel:
             dialogs += dialog
 
         GeneralAnswer = GC_predict(inputsentence, self.GC_model, self._mTokenizer)
-        NEROut = ner_predict(self.NER_model,[inputsentence])
         EmoOut = emo_predict(self.EMO_model,[inputsentence])
-
-        NER = {}
-        for (word, tag) in NEROut:
-            NER[word] = tag
 
         if self.manage_dailogbuffer() is True:
             (initial_topic_output, initial_label_prob, topic_percentage), topic_prob_vec = Topic_predict(self.Topic_model, [dialogs], self._mTokenizer)
@@ -83,7 +77,7 @@ class AIModel:
             DialogType = "Scenario"
 
         self.dialog_buffer.append(GeneralAnswer)
-        return GeneralAnswer, NER, EmoOut, Topic, DialogType
+        return GeneralAnswer, EmoOut, Topic, DialogType
 
 ##광명님이 말하는 자료구조로 만들어주는 함수
     def run(self, name, inputsentence):
@@ -92,11 +86,10 @@ class AIModel:
 
         self.dialog_buffer.append(inputsentence)
 
-        GeneralAnswer, Name_Entity, Emotion, Topic, Type = self.get_results(inputsentence)
+        GeneralAnswer, Emotion, Topic, Type = self.get_results(inputsentence)
 
         Data["Name"] = name
         Data["Input_Corpus"] = inputsentence
-        Data["NER"] = Name_Entity
         Data["Emotion"] = Emotion
         Data["Topic"] = Topic
         Data["Type"] = Type
