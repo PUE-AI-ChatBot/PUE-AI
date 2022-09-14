@@ -1,13 +1,16 @@
 ## setup
-
+from setup import setup_environ
 ## device 관련 설정
 import os
 
-from .submodules.emo_classifier import *
-from .submodules.ner_classifier import *
-from .submodules.gd_generator import *
-from .submodules.topic_classifier import *
+from submodules.emo_classifier import *
+from submodules.ner_classifier import *
+from submodules.gd_generator import *
+from submodules.topic_classifier import *
+from submodules.subtopic_classifier import *
 from collections import OrderedDict
+
+
 
 ## 가중치만 만들고 불러오는게 안전하다
 ##모델 만들어오는 함수들
@@ -17,6 +20,7 @@ class AIModel:
     def __init__(self):
         self.get_converters()
         self.dialog_buffer = []
+        self.model_loader()
 
     def get_converters(self):
         self._mTokenizer = mTokenizer
@@ -28,6 +32,7 @@ class AIModel:
         self.NER_model = load_NER_model()
         self.EMO_model = load_Emo_model()
         self.Topic_model = load_Topic_model()
+        self.ST_model = load_Sub_Topic_model()
 
     def manage_dailogbuffer(self):
         if len(self.dialog_buffer) < 3:
@@ -65,9 +70,12 @@ class AIModel:
                 topic_index = np.argmax(topic_prob_vec[0][:7])
                 altered_topic_output = self._topic_converter[topic_index]
                 Topic = altered_topic_output
+                Topic = Sub_Topic_predict(self.ST_model, inputsentence, Topic)
+
             else:
                 altered_topic_output = 'None'
                 Topic = initial_topic_output
+                Topic = Sub_Topic_predict(self.ST_model, inputsentence, Topic)
         else:
             Topic = "None"
 
@@ -100,14 +108,12 @@ class AIModel:
 
         return Data
 
-if __name__ == "__main__ ":
-    DoDam = AIModel()
+# if __name__ == "__main__ ":
 
-    DoDam.model_loader()
+DoDam = AIModel()
+UserName = "민채",
 
-    UserName = "민채"
-
-    while True:
-        sample = input("입력 : ")
-        output = DoDam.run(UserName, sample)
-        print("출력 : {}" .format(output))
+while True:
+    sample = input("입력 : ")
+    output = DoDam.run(UserName, sample)
+    print("출력 : {}" .format(output))
