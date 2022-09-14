@@ -27,68 +27,45 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
     </table>
 </div>
 
-## Architecture
-![image](https://user-images.githubusercontent.com/79739512/190148440-01118f73-405c-46a2-89b2-8e1d3bca530f.png)
-
 
 ## Environments
 <table>
 <tr>
  <td align="center">언어</td>
  <td>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=ffffff"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=ffffff"/>
-  <img src="https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=Typescript&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
  </td>
 </tr>
 <tr>
  <td align="center">IDE</td>
  <td>
-    <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>&nbsp </td>
-</tr>
-<tr>
- <td align="center">프레임워크</td>
- <td>
-     <img src="https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=Next.js&logoColor=ffffff"/>&nbsp
- </td>
+    <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
+     <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp </td>
+    
 </tr>
 <tr>
  <td align="center">라이브러리</td>
  <td>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=ffffff"/>&nbsp
-  <img src="https://img.shields.io/badge/Emotion-DB7093?style=for-the-badge&logo=emotion&logoColor=ffffff"/>&nbsp
-  <img src="https://img.shields.io/badge/Axios-8DD6F9?style=for-the-badge"/>&nbsp </td>
-</tr>
-<tr>
- <td align="center">상태관리</td>
- <td>
-  <img src="https://img.shields.io/badge/Recoil-0064FF?style=for-the-badge">&nbsp
- </td>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white"/>
+     <img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white"/>&nbsp
 </tr>
 <tr>
  <td align="center">패키지관리</td>
  <td>
-    <img src="https://img.shields.io/badge/NPM-2C8EBB?style=for-the-badge&logo=npm&logoColor=white"/>&nbsp
+    <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white"/>&nbsp
   </td>
 </tr>
 <tr>
- <td align="center">Formatter</td>
+ <td align="center">GPU 서버</td>
  <td>
-  <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=ffffff"/> &nbsp
-  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=ffffff"/>&nbsp
-  <img src="https://img.shields.io/badge/husky-42b983?style=for-the-badge"/>&nbsp
-  <img src="https://img.shields.io/badge/lint staged-654321?style=for-the-badge"/>&nbsp</td>
-</tr>
-<tr>
- <td align="center">배포</td>
- <td><img src="https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=Vercel&logoColor=ffffff"/>&nbsp </td>
+    <img src="https://img.shields.io/badge/Google%20Colab-F9AB00.svg?style=for-the-badge&logo=Google-Colab&logoColor=white"/>&nbsp
+  </td>
 </tr>
 <tr>
  <td align="center">협업툴</td>
  <td>
-    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>&nbsp
+    <img src="https://img.shields.io/badge/ClickUp-7B68EE.svg?style=for-the-badge&logo=ClickUp&logoColor=white"/>&nbsp
     <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white"/>&nbsp
-    <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"/>&nbsp
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"/>&nbsp
  </td>
 </tr>
@@ -97,7 +74,7 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 
 ## Project Settings
 
-#### Install npm  dependencies
+#### Install library dependencies
 
 ```bash
 > npm install
