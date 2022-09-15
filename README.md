@@ -1,6 +1,6 @@
 # 💬 PUE: AI 심리 상담 챗봇
-[![Pull Requests](https://img.shields.io/github/issues-pr/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/pulls)
-[![GitHub issues](https://img.shields.io/github/issues/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/issues)
 ![GitHub last commit](https://img.shields.io/github/last-commit/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)
 >  **:two_hearts: AI 심리상담 챗봇 PUE**  
 >
@@ -15,8 +15,6 @@
 코로나 블루로 우울감을 호소하는 사람이 많아지자 상담사 고용을 늘렸지만 여전히 응답률이 저조하였습니다. <br>
 이를 위해 정보 제공용 챗봇을 뛰어넘어 가벼운 심리 상담이 가능한 챗봇을 만들고자 하였습니다. <br>
 상담이 여려운 시간대에도 상담이 가능하며 챗봇 상담의 높은 접근성으로 기존 상담에 대한 인식을 개선하고자 개발하게 되었습니다. <br>
-
-## 🔨 Environments
 
 ## File structure
 <div align="left">
@@ -65,31 +63,29 @@
 </div>
 
 
-## Environments
+## 🔨 Environments
 ### Development
 #### Language
-<img src="https://img.shields.io/badge/python-3.9-blue"/>
+<img src="https://img.shields.io/badge/python-3.9-blue?style=for-the-badge&logo=appveyor"/>
+
+#### Library
+<div>
+  <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen?style=for-the-badge&logo=appveyor"/>
+     <img src="https://img.shields.io/badge/transformers-4.21.3-yellow?style=for-the-badge&logo=appveyor"/>&nbsp
+</div>
+
 #### IDE
 <div>
     <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
      <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp 
 </div>
 
-#### Library
-<div>
-  <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen"/>
-     <img src="https://img.shields.io/badge/transformers-4.21.3-yellow"/>&nbsp
-</div>
-
-#### Package Management
+#### Package Management & GPU Server
 <div>
     <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white"/>&nbsp
-</div>
-
-#### GPU Server
-<div>
     <img src="https://img.shields.io/badge/Google%20Colab-F9AB00.svg?style=for-the-badge&logo=Google-Colab&logoColor=white"/>&nbsp
 </div>
+
 
 ### Communication
 <div>
@@ -100,7 +96,7 @@
 
 
 
-## Project Settings
+## ⚙️ Project Settings
 #### Install library dependencies
 
 ```bash
@@ -169,15 +165,17 @@
 
 ## 📚 Documentations
 
-### Open source Github
-Klue-BERT : https://github.com/KLUE-benchmark/KLUE</br>
-pytorch : https://github.com/pytorch</br>
-tensorflow : https://github.com/tensorflow/tensorflow
+### Open Source Github
+- Klue-BERT : https://github.com/KLUE-benchmark/KLUE
+
+- pytorch : https://github.com/pytorch
+
+- tensorflow : https://github.com/tensorflow/tensorflow
 
 ### Wiki
-- [Branch Strategy](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Branch-Strategy)
+- [Specification](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)
 
-- [Commit Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Commit-Convention)
+- [Coding Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Coding-Convention)
 
 - [Workflow](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Workflow)
 
