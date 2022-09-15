@@ -69,16 +69,17 @@
 ### Development
 #### Language
 <img src="https://img.shields.io/badge/python-3.9-blue"/>
-#### IDE
-<div>
-    <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
-     <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp 
-</div>
 
 #### Library
 <div>
   <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen"/>
      <img src="https://img.shields.io/badge/transformers-4.21.3-yellow"/>&nbsp
+</div>
+
+#### IDE
+<div>
+    <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
+     <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp 
 </div>
 
 #### Package Management
