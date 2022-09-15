@@ -66,12 +66,12 @@
 ## 🔨 Environments
 ### Development
 #### Language
-<img src="https://img.shields.io/badge/python-3.9-blue"/>
+<img src="https://img.shields.io/badge/python-3.9-blue?style=for-the-badge&logo=appveyor"/>
 
 #### Library
 <div>
-  <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen"/>
-     <img src="https://img.shields.io/badge/transformers-4.21.3-yellow"/>&nbsp
+  <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen?style=for-the-badge&logo=appveyor"/>
+     <img src="https://img.shields.io/badge/transformers-4.21.3-yellow?style=for-the-badge&logo=appveyor"/>&nbsp
 </div>
 
 #### IDE
