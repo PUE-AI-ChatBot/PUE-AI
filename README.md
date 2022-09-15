@@ -168,9 +168,11 @@
 ## 📚 Documentations
 
 ### Open source Github
-Klue-BERT : https://github.com/KLUE-benchmark/KLUE</br>
-pytorch : https://github.com/pytorch</br>
-tensorflow : https://github.com/tensorflow/tensorflow
+- Klue-BERT : https://github.com/KLUE-benchmark/KLUE
+
+- pytorch : https://github.com/pytorch
+
+- tensorflow : https://github.com/tensorflow/tensorflow
 
 ### Wiki
 - [Branch Strategy](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Branch-Strategy)
