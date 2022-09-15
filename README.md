@@ -1,16 +1,22 @@
-# PUE-AI
-[![Pull Requests][pr-shield]][pr-url]
-> **🏃 땅따먹기 기반 운동 장려 앱 NEMODU**  
+# 💬 PUE: AI 심리 상담 챗봇
+[![Pull Requests](https://img.shields.io/github/issues-pr/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/issues)
+![GitHub last commit](https://img.shields.io/github/last-commit/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)
+>  **:two_hearts: AI 심리상담 챗봇 PUE**  
 >
-> DND 7기 <br>
-> 프로젝트 기간 : 2022.07 ~ <br> <br>
-> **Healthy Pleasure,** 즐거운 건강관리를 위해 <br>
-> 나의 일상 속 움직임을 기록하고, 친구와 재미있게 운동할 수 있는 앱 서비스
+> Open Source <br>
+> 프로젝트 시작 : 2022.08 <br> <br>
+> 힘든 사람 누구에게나 ***친구가 되어줄*** <br>
+> ***따듯한 위로를 전하는*** AI 챗봇 서비스 <br> 
 >
 
-## Goals
-As we go through the COVID-19, most of the 'meeting places' are rapidly moving to various virtual conference spaces started from Zoom. As such, there are many side effects, A typical example is Zoom Fatigue, which causes a lot of fatigue in virtual conferences than usual conversations. We think the main causes of that are
+## 🥇 Goals
 
+코로나 블루로 우울감을 호소하는 사람이 많아지자 상담사 고용을 늘렸지만 여전히 응답률이 저조하였습니다. <br>
+이를 위해 정보 제공용 챗봇을 뛰어넘어 가벼운 심리 상담이 가능한 챗봇을 만들고자 하였습니다. <br>
+상담이 여려운 시간대에도 상담이 가능하며 챗봇 상담의 높은 접근성으로 기존 상담에 대한 인식을 개선하고자 개발하게 되었습니다. <br>
+
+## 🔨 Environments
 
 ## File structure
 <div align="left">
@@ -121,7 +127,7 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 >        print("출력 : {}" .format(output))
 ```
 
-## Feature
+## 📜 Feature
 > 사용자 입력 대화를 분석, 분류하여 결과에 따라 일반대화를 생성하고 하나의 자료로 만들어 냅니다. 
 
 보다 자세한 기능 설명은 [**AI_Wiki_Specification**](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)을 참고해주세요.
@@ -145,7 +151,7 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 - Decoder에 Bert의 인코딩된 입력과, Bert의 출력을 입력하여 attention mechanism 및 FFNN 을 통해 답변 token들을 차례로 도출합니다.
 - 모든 대화 정보 및 타입, 일상 대화 답변을 OrderedDict 자료형에 저장하여 서버에 반환합니다.
 
-## Developers
+## 💻 Developers
 <div align="left">
     <table border="1">
         <th><a href="https://github.com/HeoYoon1">허윤</a></th>
@@ -163,18 +169,22 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 
 
 
-## DOCUMENTARY
+## 📚 Documentations
 
 ### Open source Github
 Klue-BERT : https://github.com/KLUE-benchmark/KLUE</br>
 pytorch : https://github.com/pytorch</br>
 tensorflow : https://github.com/tensorflow/tensorflow
 
-You can also see the [**AI_Wiki**](https://github.com/PUE-AI-ChatBot/PUE-AI.wiki.git).
+### Wiki
+- [Branch Strategy](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Branch-Strategy)
 
-## LICENSE
+- [Commit Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Commit-Convention)
+
+- [Workflow](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Workflow)
+
+## 🔒 LICENSE
 Preparing...
 
 
-[pr-shield]: https://img.shields.io/github/issues-pr/Study-CodingTest/Study?style=for-the-badge
-[pr-url]: https://github.com/PUE-AI-ChatBot/PUE-FE
+
