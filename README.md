@@ -165,7 +165,7 @@
 
 ## 📚 Documentations
 
-### Open source Github
+### Open Source Github
 - Klue-BERT : https://github.com/KLUE-benchmark/KLUE
 
 - pytorch : https://github.com/pytorch
