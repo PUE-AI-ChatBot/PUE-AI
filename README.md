@@ -68,9 +68,7 @@
 ## Environments
 ### Development
 #### Language
-<img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
-
-
+<img src="https://img.shields.io/badge/python-3.9-blue"/>
 #### IDE
 <div>
     <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
