@@ -14,14 +14,14 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 ## Developers
 <div align="left">
     <table border="1">
-        <th><a href="https://github.com/yunkyung-Hwang">황윤경</a></th>
-        <th><a href="https://github.com/iowa329">김희재</a></th>
+        <th><a href="https://github.com/HeoYoon1">허윤</a></th>
+        <th><a href="https://github.com/pangthing">박광명</a></th>
         <tr>
             <td>
-                <img src="https://github.com/yunkyung-Hwang.png" width='80' />
+                <img src="https://github.com/HeoYoon1.png" width='80' />
             </td>
             <td>
-                <img src="https://github.com/iowa329.png" width='80' />
+                <img src="https://github.com/pangthing.png" width='80' />
             </td>
         </tr>
     </table>
