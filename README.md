@@ -82,15 +82,12 @@
      <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp 
 </div>
 
-#### Package Management
+#### Package Management & GPU Server
 <div>
     <img src="https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white"/>&nbsp
-</div>
-
-#### GPU Server
-<div>
     <img src="https://img.shields.io/badge/Google%20Colab-F9AB00.svg?style=for-the-badge&logo=Google-Colab&logoColor=white"/>&nbsp
 </div>
+
 
 ### Communication
 <div>
