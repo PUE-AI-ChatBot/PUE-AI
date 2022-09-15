@@ -1,6 +1,6 @@
 # 💬 PUE: AI 심리 상담 챗봇
-[![Pull Requests](https://img.shields.io/github/issues-pr/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/pulls)
-[![GitHub issues](https://img.shields.io/github/issues/PUE-AI-ChatBot/PUE-FE?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)](https://github.com/PUE-AI-ChatBot/PUE-AI/issues)
 ![GitHub last commit](https://img.shields.io/github/last-commit/PUE-AI-ChatBot/PUE-AI?style=for-the-badge)
 >  **:two_hearts: AI 심리상담 챗봇 PUE**  
 >
