@@ -173,9 +173,9 @@
 - tensorflow : https://github.com/tensorflow/tensorflow
 
 ### Wiki
-- [Branch Strategy](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Branch-Strategy)
+- [Specification](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)
 
-- [Commit Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Commit-Convention)
+- [Coding Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Coding-Convention)
 
 - [Workflow](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Workflow)
 
