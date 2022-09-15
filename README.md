@@ -96,7 +96,7 @@
 
 
 
-## Project Settings
+## ⚙️ Project Settings
 #### Install library dependencies
 
 ```bash
