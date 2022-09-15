@@ -145,8 +145,6 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 - Decoder에 Bert의 인코딩된 입력과, Bert의 출력을 입력하여 attention mechanism 및 FFNN 을 통해 답변 token들을 차례로 도출합니다.
 - 모든 대화 정보 및 타입, 일상 대화 답변을 OrderedDict 자료형에 저장하여 서버에 반환합니다.
 
-## BERT
-
 ## Developers
 <div align="left">
     <table border="1">
