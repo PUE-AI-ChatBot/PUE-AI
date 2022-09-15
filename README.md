@@ -66,7 +66,6 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 
 
 #### IDE
-
 <div>
     <img src="https://img.shields.io/badge/VisualStudioCode-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white"/>
      <img src = "https://img.shields.io/badge/PyCharm-000000.svg?style=for-the-badge&logo=PyCharm&logoColor=white"/>&nbsp 
@@ -98,7 +97,6 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 
 
 ## Project Settings
-
 #### Install library dependencies
 
 ```bash
@@ -124,12 +122,30 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 ```
 
 ## Feature
-### 1. 
+> 사용자 입력 대화를 분석, 분류하여 결과에 따라 일반대화를 생성하고 하나의 자료로 만들어 냅니다. 
+
+보다 자세한 기능 설명은 [**AI_Wiki_Specification**](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)을 참고해주세요.
+
+### 1. 대화 분석
+> 사전 학습된 AI 모델을 통해 사용자 입력 대화에 담긴 주제와 감정을 분석하여 지정된 레이블로 분류합니다.
+- 입력 대화를 AI 모델 훈련을 위해 tensor 형태로 만드는 데이터 인코딩을 수행합니다.
+- TFBertModel layer와 classifier layer를 쌓아 Model 제작
+- 인코딩한 데이터를 모델에 입력합니다.
+- 모델의 결과값인 확률 벡터 중 최대 값을 가리키는 요소를 추출 후, label dictionary로 label 반환합니다.
+
+### 2. 대화 분류
+> 분석 결과로 얻은 주제와 감정을 바탕으로 대화 타입을 분류합니다.
+- 감정 정보가 부정이고, 주제 정보가 상담 시나리오 관련 주제이면 상담 대화로 분류합니다.
+- 감정 정보가 중립 및 긍정이고, 주제 정보가 일상 대화 관련 주제이면 일상 대화로 분류합니다.
 
 
-### 2. BERT
+### 3. 대화 생성 및 자료구성
+> 사전 학습된 AI 모델을 통해 사용자 입력에 대응하는 적절한 답변을 만들고 대화 내역을 하나의 자료로 만들어 냅니다.
+- 충분히 일상대화를 학습한 AI 모델에 입력 대화를 tensor 형태로 넣습니다.
+- Decoder에 Bert의 인코딩된 입력과, Bert의 출력을 입력하여 attention mechanism 및 FFNN 을 통해 답변 token들을 차례로 도출합니다.
+- 모든 대화 정보 및 타입, 일상 대화 답변을 OrderedDict 자료형에 저장하여 서버에 반환합니다.
 
-### 3. Feature_flow
+## BERT
 
 ## Developers
 <div align="left">
@@ -149,7 +165,7 @@ As we go through the COVID-19, most of the 'meeting places' are rapidly moving t
 
 
 
-## REFERENCE
+## DOCUMENTARY
 
 ### Open source Github
 Klue-BERT : https://github.com/KLUE-benchmark/KLUE</br>
