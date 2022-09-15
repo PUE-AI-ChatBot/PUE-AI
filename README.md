@@ -77,8 +77,8 @@
 
 #### Library
 <div>
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white"/>
-     <img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white"/>&nbsp
+  <img src="https://img.shields.io/badge/tensorflow-2.10.0-brightgreen"/>
+     <img src="https://img.shields.io/badge/transformers-4.21.3-yellow"/>&nbsp
 </div>
 
 #### Package Management
