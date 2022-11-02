@@ -1,4 +1,3 @@
-## setup
 ## device 관련 설정
 import os
 try:
@@ -27,7 +26,6 @@ class AIModel:
         self.GC_model = load_general_corpus_model()
         self.EMO_model = load_Emo_model()
         self.Topic_model = load_Topic_model()
-        self.ST_model = load_Sub_Topic_model()
 
     def manage_dailogbuffer(self):
         if len(self.dialog_buffer) < 3:
@@ -60,12 +58,10 @@ class AIModel:
                 topic_index = np.argmax(topic_prob_vec[0][:7])
                 altered_topic_output = self._topic_converter[topic_index]
                 Topic = altered_topic_output
-                Topic = Sub_Topic_predict(self.ST_model, inputsentence, Topic)
 
             else:
                 altered_topic_output = 'None'
                 Topic = initial_topic_output
-                Topic = Sub_Topic_predict(self.ST_model, inputsentence, Topic)
         else:
             Topic = "None"
 
@@ -96,6 +92,8 @@ class AIModel:
         Data["System_Corpus"] = GeneralAnswer
 
         return Data
+
+
 if __name__ == "__main__" :
     import tensorflow as tf
     from __init__ import setup_environ, download_weights

@@ -9,8 +9,8 @@
 > 힘든 사람 누구에게나 ***친구가 되어줄*** <br>
 > ***따듯한 위로를 전하는*** AI 챗봇 서비스 <br> 
 >
-
 ## 🥇 Goals
+
 
 코로나 블루로 우울감을 호소하는 사람이 많아지자 상담사 고용을 늘렸지만 여전히 응답률이 저조하였습니다. <br>
 이를 위해 정보 제공용 챗봇을 뛰어넘어 가벼운 심리 상담이 가능한 챗봇을 만들고자 하였습니다. <br>
@@ -111,7 +111,6 @@
 > from __init__ import setup_environ, download_weights
 > setup_environ()
 > download_weights()
-
 > with tf.device("/device:CPU:0"):
 >    DoDam = AIModel()
 >    UserName = "민채"
@@ -120,31 +119,24 @@
 >        output = DoDam.run(UserName, sample)
 >        print("출력 : {}" .format(output))
 ```
-
 ## 📜 Feature
 > 사용자 입력 대화를 분석, 분류하여 결과에 따라 일반대화를 생성하고 하나의 자료로 만들어 냅니다. 
-
 보다 자세한 기능 설명은 [**AI_Wiki_Specification**](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)을 참고해주세요.
-
 ### 1. 대화 분석
 > 사전 학습된 AI 모델을 통해 사용자 입력 대화에 담긴 주제와 감정을 분석하여 지정된 레이블로 분류합니다.
 - 입력 대화를 AI 모델 훈련을 위해 tensor 형태로 만드는 데이터 인코딩을 수행합니다.
 - TFBertModel layer와 classifier layer를 쌓아 Model 제작
 - 인코딩한 데이터를 모델에 입력합니다.
 - 모델의 결과값인 확률 벡터 중 최대 값을 가리키는 요소를 추출 후, label dictionary로 label 반환합니다.
-
 ### 2. 대화 분류
 > 분석 결과로 얻은 주제와 감정을 바탕으로 대화 타입을 분류합니다.
 - 감정 정보가 부정이고, 주제 정보가 상담 시나리오 관련 주제이면 상담 대화로 분류합니다.
 - 감정 정보가 중립 및 긍정이고, 주제 정보가 일상 대화 관련 주제이면 일상 대화로 분류합니다.
-
-
 ### 3. 대화 생성 및 자료구성
 > 사전 학습된 AI 모델을 통해 사용자 입력에 대응하는 적절한 답변을 만들고 대화 내역을 하나의 자료로 만들어 냅니다.
 - 충분히 일상대화를 학습한 AI 모델에 입력 대화를 tensor 형태로 넣습니다.
 - Decoder에 Bert의 인코딩된 입력과, Bert의 출력을 입력하여 attention mechanism 및 FFNN 을 통해 답변 token들을 차례로 도출합니다.
 - 모든 대화 정보 및 타입, 일상 대화 답변을 OrderedDict 자료형에 저장하여 서버에 반환합니다.
-
 ## 💻 Developers
 <div align="left">
     <table border="1">
@@ -161,26 +153,21 @@
     </table>
 </div>
 
-
-
 ## 📚 Documentations
 
 ### Open Source Github
 - Klue-BERT : https://github.com/KLUE-benchmark/KLUE
-
 - pytorch : https://github.com/pytorch
-
 - tensorflow : https://github.com/tensorflow/tensorflow
 
 ### Wiki
 - [Specification](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Specification)
-
 - [Coding Convention](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Coding-Convention)
-
 - [Workflow](https://github.com/PUE-AI-ChatBot/PUE-AI/wiki/Workflow)
 
 ## 🔒 LICENSE
-Preparing...
+This Project is [MIT licensed](https://github.com/dnd-side-project/dnd-7th-3-frontend/blob/main/LICENSE).
+
 
 
 

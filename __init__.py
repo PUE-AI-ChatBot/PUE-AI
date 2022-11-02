@@ -1,4 +1,4 @@
-import os,json
+import os, json
 
 def setup_environ():
     this_dir, this_filename = os.path.split(__file__)
@@ -15,13 +15,12 @@ def download_weights():
 
     import gdown
     this_dir = os.environ['CHATBOT_ROOT']
-    Emo_version = NER_version = GD_version = "1.0.0"
+    Emo_version = GD_version = "1.0.0"
 
     if os.path.isfile(this_dir+"/resources/config.json"):
         with open(this_dir+"/resources/config.json",'r') as f:
             loaded = json.load(f)
             Emo_version = loaded["EMO-weights-version"]
-            NER_version = loaded["NER-weights-version"]
             GD_version = loaded["GD-weights-version"]
             SUB_version = loaded["TOPIC-weights-version"]
 
@@ -31,7 +30,6 @@ def download_weights():
     with open(this_dir + "/resources/config.json", 'r') as f:
         loaded = json.load(f)
         Emo_flag = not loaded["EMO-weights-version"] == Emo_version
-        NER_flag = not loaded["NER-weights-version"] == NER_version
         GD_flag = not loaded['GD-weights-version'] == GD_version
         SUB_flag = not loaded["TOPIC-weights-version"] == SUB_version
 
@@ -50,19 +48,6 @@ def download_weights():
         output = weight_path+"/Emo_weights/Emo_weights.data-00000-of-00001"
         gdown.download(loaded["EMO-data-url"], output, quiet=False)
 
-    if not os.path.exists(weight_path + "/NER_weights"):
-        os.makedirs(weight_path + "/NER_weights")
-
-    if not os.path.isfile(weight_path+"/NER_weights/NER_weights.index") or NER_flag:
-        print("Downloading NER pretrained index...")
-        output = weight_path+"/NER_weights/NER_weights.index"
-        gdown.download(loaded["NER-index-url"], output, quiet=False)
-
-    if not os.path.isfile(weight_path+"/NER_weights/NER_weights.data-00000-of-00001") or NER_flag:
-        print("Downloading NER pretrained weights...")
-        output = weight_path+"/NER_weights/NER_weights.data-00000-of-00001"
-        gdown.download(loaded["NER-data-url"], output, quiet=False)
-
     if not os.path.exists(weight_path + "/GeneralDialog_weights"):
         os.makedirs(weight_path + "/GeneralDialog_weights")
 
@@ -78,26 +63,6 @@ def download_weights():
         print("Downloading Topic_weights pretrained index...")
         output = weight_path + "/Topic_weights/Topic_weights.h5"
         gdown.download(loaded["TOPIC-h5-url"], output, quiet=False)
-
-    category = ["연애_결혼", "가족", "군대", "회사_아르바이트"]
-    theme_weights = [("LDA_model_{0}","model"), ("LDA_model_{0}.expElogbeta.npy","npy"), ("LDA_model_{0}.state","state"),
-                     ("LDA_model_{0}.id2word","id2word")
-                      ]
-    url_name = ["married", "family", "army", "company"]
-
-    if not os.path.exists(weight_path+"/Subtopic_model"):
-        os.makedirs(weight_path+"/Subtopic_model")
-
-    for k, j in enumerate(url_name):
-        for file_name,file_extension in theme_weights:
-            if not os.path.isfile(weight_path + "/Subtopic_model/" + file_name.format(category[k])) or SUB_flag:
-                print("Downloading Sub topic models...")
-
-                output = weight_path + "/Subtopic_model/" + file_name.format(category[k])
-
-                gdown.download(loaded[str(j) + "-" + file_extension + "-url"], output, quiet=False)
-
-    print("Setup has just overed!")
 
 
 setup_environ()
