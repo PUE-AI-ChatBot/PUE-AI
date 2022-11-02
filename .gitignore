@@ -9,3 +9,5 @@ resources/weights/Subtopic_model/
 resources/weights/Topic_weights/
 
 resources/weights/Transformer_weights/
+
+resources/weights/Yes_no_weights/
