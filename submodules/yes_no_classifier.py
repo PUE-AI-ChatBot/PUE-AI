@@ -8,9 +8,10 @@ import pickle
 
 stopwords = ['의','가','이','은','들','는','좀','잘','걍','과','도','를','으로','자','에','와','한','하다']
 
-tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/Y_tokenizer.pickle", 'rb'))
+
 max_len = 30
 def sentiment_predict(loaded_model, new_sentence):
+    tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/Y_tokenizer.pickle", 'rb'))
     okt = Okt()
     new_sentence = re.sub(r'[^ㄱ-ㅎㅏ-ㅣ가-힣 ]','', new_sentence)
     new_sentence = okt.morphs(new_sentence, stem=True) # 토큰화
