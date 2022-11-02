@@ -72,7 +72,7 @@ class AIModel:
         else:  # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
             DialogType = "Scenario"
             if self.cnt == 2:
-                s_flag = False
+                self.s_flag = False
             if self.state == "당혹":
                 if self.cnt == 1:
                     GeneralAnswer = ["음.. 오늘 " + name + "님께 당황스러울 만한 일이 있었나보네요.",
