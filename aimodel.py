@@ -195,12 +195,12 @@ class AIModel:
                                      "제 생각엔 " + name + "님은 현재 연민이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
 
-                if self.cnt == 2:
+                elif self.cnt == 2:
                     GeneralAnswer = ["그렇군요..말씀해 주셔서 감사해요.",
                                      "그런 상황에서 " + name + "님은 계속 신경이 쓰이실 수 밖에 없었겠네요.",
                                      "제 이야기를 한번 들어보시겠어요?"]
                     self.cnt += 1
-                if self.cnt == 3:
+                elif self.cnt == 3:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
                     if reaction == "yes":
                         GeneralAnswer = ["전문 상담사에게도 항상 의식해야 하는 중요한 2가지가 있어요.",
@@ -215,7 +215,7 @@ class AIModel:
                         self.cnt = 0
                         self.state = "general"
 
-                if self.cnt == 4:
+                elif self.cnt == 4:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
                     if reaction == "yes":
                         GeneralAnswer = ["1393 으로 전화하시면 전문 상담사에게 익명으로 상담이 가능하시니 한 번 이용해 보시는 것을 추천드려요!",
