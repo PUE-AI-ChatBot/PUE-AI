@@ -4,11 +4,11 @@ from konlpy.tag import Okt
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
-import keras
+import pickle
 
 stopwords = ['의','가','이','은','들','는','좀','잘','걍','과','도','를','으로','자','에','와','한','하다']
 
-tokenizer = Tokenizer(19416)
+tokenizer = pickle.load(open(os.environ['CHATBOT_ROOT'] + "/resources/converters/Y_tokenizer.pickle", 'rb'))
 max_len = 30
 def sentiment_predict(loaded_model, new_sentence):
     okt = Okt()

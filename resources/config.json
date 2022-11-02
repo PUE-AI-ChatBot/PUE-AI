@@ -1,7 +1,6 @@
 {
 	"EMO-weights-version":"1.0.0",
 	"NER-weights-version":"1.0.0",
-	"SUB-weights-version":"1.0.0",
 	"GD-weights-version":"1.0.0",
 	"TOPIC-weights-version":"1.0.0",
 	
@@ -12,27 +11,9 @@
 	"Transformer-index-url":"https://drive.google.com/u/0/uc?id=1lMc6Wx0baeC4VxI-3UuFXUCbw4OGVXXB&export=download",
 	"Transformer-check-url":"https://drive.google.com/u/0/uc?id=14hw-IYbpbJPEajYd5wWTjnw02TPoTR36&export=download",
 	"Transformer-data-url":"https://drive.google.com/u/0/uc?id=137jPMTIxu773g_AF4SPx2PjrzRGsOL_6&export=download",
-	
-	"married-model-url" : "https://drive.google.com/u/0/uc?id=1KpbAsf3rWSQzis6y8KnyVi6S3oFWnG23",
-	"married-npy-url" : "https://drive.google.com/u/0/uc?id=1o7IaDXS05LslAKjY3J7kvpo4eoB6257O",
-	"married-state-url" : "https://drive.google.com/u/0/uc?id=1k7kffQZiwcO0xs0Owx7ys9iH9XXXQbVD",
-	"married-id2word-url" : "https://drive.google.com/u/0/uc?id=1CB0ZaCX--oilcnV-vnw5X0jo_oaLJZ7d",
 
-	"army-model-url" : "https://drive.google.com/u/0/uc?id=1Kj4Q2pKXfadNdIy2bv_9G7IXhnl77Wha",
-	"army-npy-url" : "https://drive.google.com/u/0/uc?id=1FxYf-0SQ6SWFvqEZvzDWqj3sECVFSKw8",
-	"army-state-url" : "https://drive.google.com/u/0/uc?id=1fxr-FT5aIPQUBCyGSRZzlHbAG0bFfuva",
-	"army-id2word-url" : "https://drive.google.com/u/0/uc?id=1ZSn83-B5yLi0PVexijn0IJDdjT-e-FD4",
-
-	"family-model-url" : "https://drive.google.com/u/0/uc?id=1zXx4bAn7mOBqC2iClcoSRVYG5-tnFJse",
-	"family-npy-url" : "https://drive.google.com/u/0/uc?id=1ve9JL9a32x-eJlbtKSGjMgIR1WUckHzG",
-	"family-state-url" : "https://drive.google.com/u/0/uc?id=1vPmU3hdGP-1v4CKlcdPTALAVBWeUoC1c",
-	"family-id2word-url" : "https://drive.google.com/u/0/uc?id=1rHktRcF972MzrhgfPDhaWJi7cR0o4HtY",
-
-	"company-model-url" : "https://drive.google.com/u/0/uc?id=1hWelZQJYOncJNIX8rTmvbTObQBnc8Dyj",
-	"company-npy-url" : "https://drive.google.com/u/0/uc?id=1h8K9fOSxAwlW00gdVrPcr4uWkrmMq3IH",
-	"company-state-url" : "https://drive.google.com/u/0/uc?id=1nm7wG70bgp4dnOKknGhH8gszN7EfwRSA",
-	"company-id2word-url" : "https://drive.google.com/u/0/uc?id=1onXEIQ5r_iYz-PikFTCoh5RNExWJV3-m",
-	
 	"GD-h5-url" : "https://drive.google.com/u/0/uc?id=1lJSRAh3lYeoKJxZvCFsLcEUQWYztftzS",
-	"TOPIC-h5-url" : "https://drive.google.com/u/0/uc?id=1F1WruXhtnDRyvsGehdYY-jktztlqx-vz"
+	"TOPIC-h5-url" : "https://drive.google.com/u/0/uc?id=1F1WruXhtnDRyvsGehdYY-jktztlqx-vz",
+
+	"Yes-no-h5-url" : "https://drive.google.com/u/0/uc?id=1F_FRTbhwpwJUyv-DQ6i9dsQMxvfUth9C"
 }
