@@ -62,7 +62,7 @@ class AIModel:
             self.s_flag = True
 
         if self.state == "general":
-            GeneralAnswer = GC_predict(inputsentence, self.GC_model, self._mTokenizer)
+            GeneralAnswer = [GC_predict(inputsentence, self.GC_model, self._mTokenizer)]
             EmoOut = emo_predict(self.EMO_model, [inputsentence])
 
         else:  # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
