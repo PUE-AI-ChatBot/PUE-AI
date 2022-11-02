@@ -20,7 +20,7 @@ def sentiment_predict(loaded_model, new_sentence):
     pad_new = pad_sequences(encoded, maxlen = max_len) # 패딩
     score = float(loaded_model.predict(pad_new)) # 예측
 
-    if score > 0.5:
+    if score > 0.5 or new_sentence in ["그래"]:
         return "yes"
     else:
         return "no"
