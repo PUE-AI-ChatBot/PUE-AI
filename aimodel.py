@@ -1,11 +1,13 @@
 ## device 관련 설정
 import os
+
 try:
     from submodules import *
     from collections import OrderedDict
-except :
+except:
     from .submodules import *
     from collections import OrderedDict
+
 
 ## 가중치만 만들고 불러오는게 안전하다
 ##모델 만들어오는 함수들
@@ -54,7 +56,6 @@ class AIModel:
         for dialog in self.dialog_buffer:
             dialogs += dialog
 
-
         if self.cnt == 0 and EmoOut in ["당혹", "죄책감", "슬픔", "연민", "걱정", "기쁨", "불만", "질투"]:
             self.state = EmoOut
             self.cnt += 1
@@ -64,14 +65,14 @@ class AIModel:
             GeneralAnswer = GC_predict(inputsentence, self.GC_model, self._mTokenizer)
             EmoOut = emo_predict(self.EMO_model, [inputsentence])
 
-        else: # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
+        else:  # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
             if self.cnt == 2:
                 s_flag = False
             if self.state == "당혹":
                 if self.cnt == 1:
                     GeneralAnswer = ["음.. 오늘 " + name + "님께 당황스러울 만한 일이 있었나보네요.",
-                                    "그런 일은 기분이 좋을 수도 있었던 하루에 브레이크를 걸어버리기도 하죠..",
-                                    "괜찮으시다면 어떤 일이 있었는지 여쭤봐도 될까요?"]
+                                     "그런 일은 기분이 좋을 수도 있었던 하루에 브레이크를 걸어버리기도 하죠..",
+                                     "괜찮으시다면 어떤 일이 있었는지 여쭤봐도 될까요?"]
                     self.cnt += 1
 
 
@@ -98,7 +99,7 @@ class AIModel:
                         self.state = "general"
 
                 elif self.cnt == 4:
-                    GeneralAnswer = ["답변해주셔서 감사해요 (name)님.","당황스럽다고 느껴지는 상황을 맞닥뜨리면 사람은 크게 위축되기 마련이죠.",
+                    GeneralAnswer = ["답변해주셔서 감사해요 (name)님.", "당황스럽다고 느껴지는 상황을 맞닥뜨리면 사람은 크게 위축되기 마련이죠.",
                                      "그게 (name)님께서 침착하게 생각하기 어려운 상황을 만들어버렸네요.",
                                      "저는 가끔 당혹스러움에 생각이 많아질 때면 책상 정리를 하면서 감정으로부터 멀어지려고 해요.",
                                      "이게 제 나름대로 최악의 상황을 떠올리지 않을 수 있는 방법이기도 한 것 같아요.",
@@ -280,8 +281,8 @@ class AIModel:
 
             elif self.state == "불만":
                 if self.cnt == 1:
-                    GeneralAnswer = [name+"님이 많이 화가 나신 것 같아 보여요..",
-                                     "짜증나는 일이 많은 게 현실이죠. "+ name+ "님의 일도 마찬가지로 짜증이 날만한 일일 거 같아요.",
+                    GeneralAnswer = [name + "님이 많이 화가 나신 것 같아 보여요..",
+                                     "짜증나는 일이 많은 게 현실이죠. " + name + "님의 일도 마찬가지로 짜증이 날만한 일일 거 같아요.",
                                      name + "님의 상황에선 화가 안나는 게 이상한 일인 것 같기도 하구요.",
                                      "혹시 괜찮다면 제 이야기를 한번 들어보시겠어요?"]
                     self.cnt += 1
@@ -317,13 +318,12 @@ class AIModel:
                         GeneralAnswer = ["괜찮아요! ",
                                          "다음에 언제든 원하실 때 찾아주세요."]
                     self.cnt = 0
-                    self.state ="general"
-
-
+                    self.state = "general"
 
         if self.manage_dailogbuffer() is True:
-            (initial_topic_output, initial_label_prob, topic_percentage), topic_prob_vec = Topic_predict(self.Topic_model, [dialogs], self._mTokenizer)
-            if EmoOut in ('불만', '당혹', '걱정', '질투', '슬픔', '죄책감', '연민') and (float(initial_label_prob*100) < 99.0) :
+            (initial_topic_output, initial_label_prob, topic_percentage), topic_prob_vec = Topic_predict(
+                self.Topic_model, [dialogs], self._mTokenizer)
+            if EmoOut in ('불만', '당혹', '걱정', '질투', '슬픔', '죄책감', '연민') and (float(initial_label_prob * 100) < 99.0):
                 topic_index = np.argmax(topic_prob_vec[0][:7])
                 altered_topic_output = self._topic_converter[topic_index]
                 Topic = altered_topic_output
@@ -334,18 +334,17 @@ class AIModel:
         else:
             Topic = "None"
 
-        #if self.state == "중립":
-         #   DialogType = "General"
-       # else:
+        # if self.state == "중립":
+        #   DialogType = "General"
+        # else:
         #    DialogType = "Scenario"
 
-        if self.state == "중립" or s_flag == True:
+        if self.state == "중립" or self.s_flag:
             return GeneralAnswer, EmoOut, Topic, "General", self.s_flag
         else:
             return GeneralAnswer, None, Topic, "Scenario", self.s_flag
 
-
-##광명님이 말하는 자료구조로 만들어주는 함수
+    ##광명님이 말하는 자료구조로 만들어주는 함수
     def run(self, name, inputsentence):
 
         Data = OrderedDict()
@@ -365,9 +364,10 @@ class AIModel:
         return Data
 
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     import tensorflow as tf
     from __init__ import setup_environ, download_weights
+
     setup_environ()
     download_weights()
 
@@ -377,4 +377,4 @@ if __name__ == "__main__" :
         while True:
             sample = input("입력 : ")
             output = DoDam.run(UserName, sample)
-            print("출력 : {}" .format(output))
+            print("출력 : {}".format(output))
