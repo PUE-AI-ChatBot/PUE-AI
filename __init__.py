@@ -22,7 +22,6 @@ def download_weights():
             loaded = json.load(f)
             Emo_version = loaded["EMO-weights-version"]
             GD_version = loaded["GD-weights-version"]
-            SUB_version = loaded["TOPIC-weights-version"]
 
     output = this_dir.replace("\\", "/") + "/resources/config.json"
     gdown.download(config_url, output, quiet=False)
@@ -31,10 +30,10 @@ def download_weights():
         loaded = json.load(f)
         Emo_flag = not loaded["EMO-weights-version"] == Emo_version
         GD_flag = not loaded['GD-weights-version'] == GD_version
-        SUB_flag = not loaded["TOPIC-weights-version"] == SUB_version
 
     weight_path = this_dir.replace("\\","/") + "/resources/weights"
 
+    ##################################감정 분류 모델 다운로드###########################################
     if not os.path.exists(weight_path+"/Emo_weights") :
         os.makedirs(weight_path+"/Emo_weights")
 
@@ -47,7 +46,7 @@ def download_weights():
         print("Downloading Emo pretrained weights...")
         output = weight_path+"/Emo_weights/Emo_weights.data-00000-of-00001"
         gdown.download(loaded["EMO-data-url"], output, quiet=False)
-
+    ####################################일반 대화 생성 모델 다운로드################################################
     if not os.path.exists(weight_path + "/GeneralDialog_weights"):
         os.makedirs(weight_path + "/GeneralDialog_weights")
 
@@ -56,14 +55,23 @@ def download_weights():
         output = weight_path + "/GeneralDialog_weights/General_weights.h5"
         gdown.download(loaded["GD-h5-url"], output, quiet=False)
 
+    #########################################주제 분류 모델 다운로드##########################################
     if not os.path.exists(weight_path + "/Topic_weights"):
         os.makedirs(weight_path + "/Topic_weights")
 
-    if not os.path.isfile(weight_path + "/Topic_weights/Topic_weights.h5") or GD_flag:
+    if not os.path.isfile(weight_path + "/Topic_weights/Topic_weights.h5"):
         print("Downloading Topic_weights pretrained index...")
         output = weight_path + "/Topic_weights/Topic_weights.h5"
         gdown.download(loaded["TOPIC-h5-url"], output, quiet=False)
 
+    #############################################긍/부정 분류 모델 다운로드##########################################
+    if not os.path.exists(weight_path + "/Yes_no_weights"):
+        os.makedirs(weight_path + "/Yes_no_weights")
+
+    if not os.path.isfile(weight_path + "/Yes_no_weights/yes_no_weights.h5"):
+        print("Downloading Yes_no_weights pretrained index...")
+        output = weight_path + "/Yes_no_weights/Yes_no_weights.h5"
+        gdown.download(loaded["Yes-no-h5-url"], output, quiet=False)
 
 setup_environ()
 download_weights()

@@ -5,3 +5,4 @@ tqdm == 4.64.0
 pandas == 1.4.3
 seqeval == 1.2.2
 setuptools == 63.4.1
+konlpy
