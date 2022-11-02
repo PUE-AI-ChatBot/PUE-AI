@@ -334,14 +334,12 @@ class AIModel:
         else:
             Topic = "None"
 
-        if self.state == "중립":
-            DialogType = "General"
-        # elif EmoOut in ('불만', '당혹', '걱정', '질투', '슬픔', '죄책감', '연민'):
-        #     DialogType = "Scenario"
-        else:
-            DialogType = "Scenario"
+        #if self.state == "중립":
+         #   DialogType = "General"
+       # else:
+        #    DialogType = "Scenario"
 
-        if self.state == "중립":
+        if self.state == "중립" or s_flag == True:
             return GeneralAnswer, EmoOut, Topic, "General", self.s_flag
         else:
             return GeneralAnswer, None, Topic, "Scenario", self.s_flag
