@@ -131,7 +131,7 @@ class AIModel:
                 elif self.cnt == 3:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
                     if reaction == "yes":
-                        GeneralAnswer = ["그렇군요.. " name + "님은 계속 혼자서 이런 상황 속에서 버텨오신 거군요..",
+                        GeneralAnswer = ["그렇군요.. " + name + "님은 계속 혼자서 이런 상황 속에서 버텨오신 거군요..",
                                          "혼자 힘들게 버티셨을 생각을 하니 마음이 슬퍼요..",
                                          "전문 상담사와의 대화는 어떻게 생각하시나요? 번호를 알려드릴게요!"]
                     else:
