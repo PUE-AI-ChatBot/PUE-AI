@@ -52,9 +52,11 @@ class AIModel:
 
     def get_results(self, name, inputsentence):
         dialogs = ""
-        EmoOut = "중립"
         for dialog in self.dialog_buffer:
             dialogs += dialog
+
+        if self.cnt < 2:
+            EmoOut = emo_predict(self.EMO_model, [inputsentence])
 
         if self.cnt == 0 and EmoOut in ["당혹", "죄책감", "슬픔", "연민", "걱정", "기쁨", "불만", "질투"]:
             self.state = EmoOut
@@ -63,7 +65,7 @@ class AIModel:
 
         if self.state == "general":
             GeneralAnswer = [GC_predict(inputsentence, self.GC_model, self._mTokenizer)]
-            EmoOut = emo_predict(self.EMO_model, [inputsentence])
+
 
         else:  # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
             if self.cnt == 2:
