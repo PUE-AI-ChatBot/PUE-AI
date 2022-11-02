@@ -51,6 +51,7 @@ class AIModel:
         #     return False
 
     def get_results(self, name, inputsentence):
+        EmoOut = None
         dialogs = ""
         for dialog in self.dialog_buffer:
             dialogs += dialog
