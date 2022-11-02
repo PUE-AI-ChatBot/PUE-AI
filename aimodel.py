@@ -61,14 +61,16 @@ class AIModel:
 
         if self.cnt == 0 and EmoOut in ["당혹", "죄책감", "슬픔", "연민", "걱정", "기쁨", "불만", "질투"]:
             self.state = EmoOut
-            self.cnt += 1
+            self.cnt = 1
             self.s_flag = True
 
         if self.state == "general":
+            DialogType = "General"
             GeneralAnswer = [GC_predict(inputsentence, self.GC_model, self._mTokenizer)]
 
 
         else:  # 당혹, 죄책감, 슬픔, 연민, 걱정, 기쁨
+            DialogType = "Scenario"
             if self.cnt == 2:
                 s_flag = False
             if self.state == "당혹":
@@ -88,48 +90,48 @@ class AIModel:
                 elif self.cnt == 3:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
                     if reaction == "yes":
-                        GeneralAnswer = ["감사해요. 저와의 대화가 (name)님께 힘이 될 수 있도록 최선을 다할게요!",
-                                         "저는 그 상황이 왜 (name)님께 당혹스럽게 느껴졌는지 얘기를 해보고 싶은데..",
+                        GeneralAnswer = ["감사해요. 저와의 대화가 " + name + "님께 힘이 될 수 있도록 최선을 다할게요!",
+                                         "저는 그 상황이 왜 " + name +"님께 당혹스럽게 느껴졌는지 얘기를 해보고 싶은데..",
                                          "천천히 상황을 돌이켜보면서 답변해주셨으면 좋겠어요.",
                                          "그 상황이 당혹스럽게 느껴진 이유는 무엇때문이었을까요?"]
                         self.cnt += 1
                     else:
-                        GeneralAnswer = ["제가 너무 성급했나봐요.. (name)님께서 이야기하기 어려운 일이라는 걸 잘 알아요..",
-                                         "(name)님께 부담을 드린 것 같아서 정말 죄송해요..",
+                        GeneralAnswer = ["제가 너무 성급했나봐요.. " + name + "님께서 이야기하기 어려운 일이라는 걸 잘 알아요..",
+                                         name +"님께 부담을 드린 것 같아서 정말 죄송해요..",
                                          "혹시 다음에라도 이야기해주실 수 있다면 언제든지 찾아와주세요!",
-                                         "그동안 더 많이 배워서 (name)님께 도움을 드릴 수 있도록 노력할게요."]
+                                         "그동안 더 많이 배워서 " + name + "님께 도움을 드릴 수 있도록 노력할게요."]
                         self.cnt = 0
                         self.state = "general"
 
                 elif self.cnt == 4:
-                    GeneralAnswer = ["답변해주셔서 감사해요 (name)님.", "당황스럽다고 느껴지는 상황을 맞닥뜨리면 사람은 크게 위축되기 마련이죠.",
-                                     "그게 (name)님께서 침착하게 생각하기 어려운 상황을 만들어버렸네요.",
+                    GeneralAnswer = ["답변해주셔서 감사해요 " + name + "님.", "당황스럽다고 느껴지는 상황을 맞닥뜨리면 사람은 크게 위축되기 마련이죠.",
+                                     "그게 " + name +"님께서 침착하게 생각하기 어려운 상황을 만들어버렸네요.",
                                      "저는 가끔 당혹스러움에 생각이 많아질 때면 책상 정리를 하면서 감정으로부터 멀어지려고 해요.",
                                      "이게 제 나름대로 최악의 상황을 떠올리지 않을 수 있는 방법이기도 한 것 같아요.",
-                                     "그럼, (name)님께서 당혹스러움을 벗어나기 위해서 할 수 있는 일은 무엇이 있을까요?"]
+                                     "그럼, " + name + "님께서 당혹스러움을 벗어나기 위해서 할 수 있는 일은 무엇이 있을까요?"]
                     self.cnt += 1
                 elif self.cnt == 5:
                     GeneralAnswer = ["좋은 방법이네요 :)",
-                                     "(name)님의 방법으로 걱정을 덜어낼 수 있다면..",
-                                     "저는 (name)님의 지친 마음이 회복될 수 있도록 계속해서 응원해드릴게요",
+                                     name + "님의 방법으로 걱정을 덜어낼 수 있다면..",
+                                     "저는 " + name +"님의 지친 마음이 회복될 수 있도록 계속해서 응원해드릴게요",
                                      "앞으로도 많이 도와드릴테니 항상 저를 찾아주세요!"]
                     self.cnt = 0
                     self.state = "general"
 
             elif self.state == "죄책감":
                 if self.cnt == 1:
-                    GeneralAnswer = ["가볍게 생각할 수 있지만 (name)이 느끼시는 감정은 심해지면 사람을 피폐하게 할 정도로 위험한 감정이죠.",
+                    GeneralAnswer = ["가볍게 생각할 수 있지만 " + name + "이 느끼시는 감정은 심해지면 사람을 피폐하게 할 정도로 위험한 감정이죠.",
                                      "어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
                 elif self.cnt == 2:
                     GeneralAnswer = ["그렇군요..말씀해 주셔서 감사해요.",
                                      "보통 이런 상황에서는 내 편이 없다고 느끼기 쉽고 실제로도 없어서 힘든 경우가 많죠.",
-                                     "(name)님은 어떠신가요, 지금 혼자라고 생각이 드시나요?"]
+                                     name + "님은 어떠신가요, 지금 혼자라고 생각이 드시나요?"]
                     self.cnt += 1
                 elif self.cnt == 3:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
                     if reaction == "yes":
-                        GeneralAnswer = ["그렇군요.. (name)님은 계속 혼자서 이런 상황 속에서 버텨오신 거군요..",
+                        GeneralAnswer = ["그렇군요.. " name + "님은 계속 혼자서 이런 상황 속에서 버텨오신 거군요..",
                                          "혼자 힘들게 버티셨을 생각을 하니 마음이 슬퍼요..",
                                          "전문 상담사와의 대화는 어떻게 생각하시나요? 번호를 알려드릴게요!"]
                     else:
@@ -151,7 +153,7 @@ class AIModel:
             elif self.state == "슬픔":
                 if self.cnt == 1:
                     GeneralAnswer = ["사람마다 슬픔을 느끼는 이유 제각각이지만 자신의 슬픔에 고통을 느끼는 것은 모두 같죠..",
-                                     "제 생각엔" + name + "님은 현재 슬픔이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
+                                     "제 생각엔 " + name + "님은 현재 슬픔이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
                     print(self.cnt)
 
@@ -172,8 +174,8 @@ class AIModel:
                     else:
                         GeneralAnswer = ["그렇군요..",
                                          "그렇다면 노래듣기를 추천드려요! 전에 어떤 분이 아이유-밤 편지를 추천하시던데 위로를 주는 음악이라고 생각해요!"]
-                    self.cnt = 0
-                    self.state = "general"
+                        self.cnt = 0
+                        self.state = "general"
 
                 if self.cnt == 4:
                     reaction = sentiment_predict(self.yes_no_model, inputsentence)
@@ -195,7 +197,7 @@ class AIModel:
 
                 if self.cnt == 2:
                     GeneralAnswer = ["그렇군요..말씀해 주셔서 감사해요.",
-                                     "그런 상황에서" + name + "님은 계속 신경이 쓰이실 수 밖에 없었겠네요.",
+                                     "그런 상황에서 " + name + "님은 계속 신경이 쓰이실 수 밖에 없었겠네요.",
                                      "제 이야기를 한번 들어보시겠어요?"]
                     self.cnt += 1
                 if self.cnt == 3:
@@ -204,7 +206,7 @@ class AIModel:
                         GeneralAnswer = ["전문 상담사에게도 항상 의식해야 하는 중요한 2가지가 있어요.",
                                          "첫째는 상대를 아끼는 마음으로 상담을 진행하는 것이죠, 그러한 마음 없이 상담을 진행한다면 내담자는 금방 눈치채고 대화를 이어나가지 않을거에요.",
                                          "둘째는 나에게 과하게 의존하는 것을 경계하는 거에요. 스스로 일어서게 도와주는 것 그것이 상담이죠.",
-                                         name + "님이 상대를 돕는 다는 것은 너무 귀해요, 다만 그 감정이 오히려" + name + "님을 힘들게 하는 상황은 피해야 한다는 거죠.",
+                                         name + "님이 상대를 돕는 다는 것은 너무 귀해요, 다만 그 감정이 오히려 " + name + "님을 힘들게 하는 상황은 피해야 한다는 거죠.",
                                          "전문 상담사와의 대화는 어떻게 생각하시나요? 번호를 알려드릴게요!"]
                         self.cnt += 1
                     else:
@@ -227,12 +229,12 @@ class AIModel:
             elif self.state == "걱정":
                 if self.cnt == 1:
                     GeneralAnswer = ["걱정은 우리를 더 올바른 길로 이끌기도 하지만 과도한 걱정은 상황을 망치고 우리 또한 지치게 하죠.",
-                                     "제 생각엔" + name + "님은 현재 걱정이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
+                                     "제 생각엔 " + name + "님은 현재 걱정이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
 
                 if self.cnt == 2:
                     GeneralAnswer = ["그렇군요..말씀해 주셔서 감사해요.",
-                                     "그런 상황에서" + name + "님은 계속 걱정이 되실 수 밖에 없었겠네요.",
+                                     "그런 상황에서 " + name + "님은 계속 걱정이 되실 수 밖에 없었겠네요.",
                                      "제 이야기를 한번 들어보시겠어요?"]
                     self.cnt += 1
 
@@ -263,7 +265,7 @@ class AIModel:
             elif self.state == "기쁨":
                 if self.cnt == 1:
                     GeneralAnswer = ["기쁨이란 감정을 느낄 수 있음이 얼마나 감사한지!!",
-                                     "제 생각엔 (name)님은 현재 기쁨이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면",
+                                     "제 생각엔 " + name + "님은 현재 기쁨이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면",
                                      "어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
                 if self.cnt == 2:
@@ -337,15 +339,15 @@ class AIModel:
         else:
             Topic = "None"
 
-        # if self.state == "중립":
-        #   DialogType = "General"
-        # else:
-        #    DialogType = "Scenario"
+        #if self.cnt == 0  :
+        #  DialogType = "General"
+        #else:
+        #  DialogType = "Scenario"
 
-        if self.state == "중립" or self.cnt == 0 or self.s_flag:
-            return GeneralAnswer, EmoOut, Topic, "General", self.s_flag
+        if DialogType == "General" or self.s_flag:
+            return GeneralAnswer, EmoOut, Topic, DialogType, self.s_flag
         else:
-            return GeneralAnswer, None, Topic, "Scenario", self.s_flag
+            return GeneralAnswer, None, Topic, DialogType, self.s_flag
 
     ##광명님이 말하는 자료구조로 만들어주는 함수
     def run(self, name, inputsentence):
