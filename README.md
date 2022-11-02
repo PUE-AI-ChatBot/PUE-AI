@@ -11,6 +11,7 @@
 >
 ## 🥇 Goals
 
+
 코로나 블루로 우울감을 호소하는 사람이 많아지자 상담사 고용을 늘렸지만 여전히 응답률이 저조하였습니다. <br>
 이를 위해 정보 제공용 챗봇을 뛰어넘어 가벼운 심리 상담이 가능한 챗봇을 만들고자 하였습니다. <br>
 상담이 여려운 시간대에도 상담이 가능하며 챗봇 상담의 높은 접근성으로 기존 상담에 대한 인식을 개선하고자 개발하게 되었습니다. <br>
@@ -169,5 +170,4 @@ This Project is [MIT licensed](https://github.com/dnd-side-project/dnd-7th-3-fro
 
 
 
-[pr-shield]: https://img.shields.io/github/issues-pr/Study-CodingTest/Study?style=for-the-badge
-[pr-url]: https://github.com/PUE-AI-ChatBot/PUE-FE
+
