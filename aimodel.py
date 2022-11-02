@@ -339,7 +339,7 @@ class AIModel:
         # else:
         #    DialogType = "Scenario"
 
-        if self.state == "중립" or self.s_flag:
+        if self.state == "중립" or self.cnt == 0 or self.s_flag:
             return GeneralAnswer, EmoOut, Topic, "General", self.s_flag
         else:
             return GeneralAnswer, None, Topic, "Scenario", self.s_flag
