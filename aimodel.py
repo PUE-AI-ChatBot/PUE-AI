@@ -163,7 +163,6 @@ class AIModel:
                     GeneralAnswer = ["사람마다 슬픔을 느끼는 이유 제각각이지만 자신의 슬픔에 고통을 느끼는 것은 모두 같죠..",
                                      "제 생각엔 " + name + "님은 현재 슬픔이란 감정을 느끼시는 상황이신 것 같은데 맞나요? 맞다면 어째서 그렇게 느끼신 것인지 더 자세히 말씀해 주시겠어요?"]
                     self.cnt += 1
-                    print(self.cnt)
 
                 elif self.cnt == 2:
                     GeneralAnswer = ["그렇군요..말씀해 주셔서 감사해요.",
