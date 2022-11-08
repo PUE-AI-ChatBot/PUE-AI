@@ -21,6 +21,9 @@ def sentiment_predict(loaded_model, new_sentence):
     score = float(loaded_model.predict(pad_new)) # 예측
 
     if score > 0.5 or new_sentence in ["그래"]:
+        if new_sentence in ["아니", "괜찮아","없어"]:
+            return "no"
+
         return "yes"
     else:
         return "no"
