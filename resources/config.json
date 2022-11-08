@@ -1,8 +1,8 @@
 {
-	"EMO-weights-version":"1.0.0",
-	"NER-weights-version":"1.0.0",
-	"GD-weights-version":"1.0.0",
-	"TOPIC-weights-version":"1.0.0",
+	"EMO-weights-version":"1.0.2",
+	"NER-weights-version":"1.0.2",
+	"GD-weights-version":"1.0.2",
+	"TOPIC-weights-version":"1.0.2",
 	
 	"EMO-index-url":"https://drive.google.com/u/0/uc?id=1nSVbVcS75vc4Kf3XKOaXhLHMWlruvq95&export=download",
 	"EMO-check-url":"https://drive.google.com/u/0/uc?id=1NC7MN8S2HW-UDFl5Bnptk5DJ4FWjKzow&export=download",
@@ -12,7 +12,7 @@
 	"Transformer-check-url":"https://drive.google.com/u/0/uc?id=14hw-IYbpbJPEajYd5wWTjnw02TPoTR36&export=download",
 	"Transformer-data-url":"https://drive.google.com/u/0/uc?id=137jPMTIxu773g_AF4SPx2PjrzRGsOL_6&export=download",
 
-	"GD-h5-url" : "https://drive.google.com/u/0/uc?id=1lJSRAh3lYeoKJxZvCFsLcEUQWYztftzS",
+	"GD-h5-url" : "https://drive.google.com/u/0/uc?id=19APNgqJrEug1490xZO1YA_xskBc1GE9X",
 	"TOPIC-h5-url" : "https://drive.google.com/u/0/uc?id=1F1WruXhtnDRyvsGehdYY-jktztlqx-vz",
 
 	"Yes-no-h5-url" : "https://drive.google.com/u/0/uc?id=1F_FRTbhwpwJUyv-DQ6i9dsQMxvfUth9C"

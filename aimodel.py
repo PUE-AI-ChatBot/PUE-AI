@@ -22,7 +22,7 @@ class AIModel:
         self.dialog_buffer = []
         self.model_loader()
         emo_predict(self.EMO_model, ["테스트"])
-        Topic_predict(self.Topic_model, "테스트테스트테스트", "기쁨")
+        Topic_predict(self.Topic_model, ["테스트테스트테스트"],self._mTokenizer)
         GC_predict("안녕", self.GC_model, self._mTokenizer)
         sentiment_predict(self.yes_no_model, "테스트")
 
