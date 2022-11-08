@@ -26,6 +26,10 @@ class AIModel:
         GC_predict("안녕", self.GC_model, self._mTokenizer)
         sentiment_predict(self.yes_no_model, "테스트")
 
+    def set_init(self):
+        self.cnt = 0
+        self.state = "general"
+
     def get_converters(self):
         self._mTokenizer = mTokenizer
         self._mGC_tokenizer = mGC_tokenizer
